@@ -28,10 +28,10 @@ if (!LS.Globals.AContext)
 
 // Audio sources
 // Microphone
-navigator.getUserMedia  = navigator.getUserMedia ||
+/* navigator.getUserMedia  = navigator.getUserMedia ||
                           navigator.webkitGetUserMedia ||
                           navigator.mozGetUserMedia ||
-                          navigator.msGetUserMedia;
+                          navigator.msGetUserMedia; */
 
 
 Lipsync.prototype.refFBins = [0, 500, 700,3000, 6000];
