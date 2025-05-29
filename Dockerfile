@@ -13,8 +13,8 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-# Make port 8080 available to the world outside this container
-EXPOSE 8080
+# Make ports 8080 and 8443 available to the world outside this container
+EXPOSE 8080 8443
 
 # Define environment variable
 ENV NODE_ENV production

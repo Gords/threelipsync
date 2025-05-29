@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8197:8080"
+      - "8444:8443"
+    environment:
+      - NODE_ENV=production
+      - PORT=8443
+      - HTTP_PORT=8080

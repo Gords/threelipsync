@@ -1,17 +1,15 @@
 Lipsync.prototype.startMic = function(){
   // Restart
   this.stopSample();
-  
-  var thatLip = this; // Capture 'this' for use in promise callbacks
   navigator.mediaDevices.getUserMedia({audio: true})
-    .then(function(stream) {
-      thatLip.stream = stream;
-      thatLip.sample = thatLip.context.createMediaStreamSource(stream);
-      thatLip.sample.connect(thatLip.analyser);
-      thatLip.working = true; 
+    .then((stream) => {
+      this.stream = stream;
+      this.sample = this.context.createMediaStreamSource(stream);
+      this.sample.connect(this.analyser);
+      this.working = true; 
     })
-    .catch(function(e){
+    .catch((e)=> {
       console.error("ERROR: get user media: ", e);
-      thatLip.working = false; 
+      this.working = false; 
     });
 }
